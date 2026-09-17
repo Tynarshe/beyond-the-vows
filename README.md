@@ -12,13 +12,13 @@ From this folder, run `python3 -m http.server 4173 --bind 127.0.0.1` and open ht
 2. In repository Settings → Pages, choose **GitHub Actions** as the source.
 3. Run the **Publish to GitHub Pages** workflow (or push a change to `main`). The workflow returns the live URL.
 
-Relative paths work both at an account's root and under a project URL. No custom domain is configured. The public repository is https://github.com/Tynarshe/beyond-the-vows. GitHub Pages publishes the website at https://tynarshe.github.io/beyond-the-vows/. Updates to `main` are deployed by the included workflow.
+Relative paths work both at an account's root and under a project URL. The custom domain beyondthevows.co.uk is configured in GitHub Pages. The public repository is https://github.com/Tynarshe/beyond-the-vows. GitHub Pages publishes the website at https://tynarshe.github.io/beyond-the-vows/. Updates to `main` are deployed by the included workflow.
 
 ## Enquiries
 
-The Contact page embeds the original Beyond The Vows Typeform (`bVqyOdQH`) using Typeform’s official widget SDK. It stays inline on mobile and desktop, and redirects are targeted inside the iframe so the website navigation remains available. The custom FormSubmit form has been removed. Typeform owns the questions, completion screen and response delivery; edit these in the existing Typeform account. No real enquiry was submitted during testing.
+The Contact page uses FormSubmit’s free AJAX service to send enquiries to info@beyondthevows.co.uk. The service requires inbox activation; submit a test from the live domain, follow the activation email, then verify a subsequent enquiry arrives. No real enquiry or activation email was sent during development.
 
-The form needs JavaScript and access to Typeform. An email link remains visible if loading fails. Enquiry information is not saved in the website’s browser storage or URLs.
+The form stays on the website and shows “Your form has been submitted” after the service confirms success. Failed or unconfirmed requests preserve entered details for manual retry. A honeypot is included. JavaScript is required; the business email link remains available without it. No personal details are stored in browser storage or URLs. The collection menu includes Other, with details captured in the plans field. Typeform is no longer used.
 
 ## Content and media
 
@@ -46,4 +46,4 @@ Services, pricing, coverage limits, Reel counts, delivery times, add-ons, locati
 
 ## Editing
 
-Edit the HTML files for page content, `assets/style.css` for appearance, and `assets/site.js` for gallery/menu behavior. Manage the enquiry questions and response settings in the existing Typeform account.
+Edit the HTML files for page content, `assets/style.css` for appearance, and `assets/site.js` for gallery/menu behavior. Edit the enquiry fields in contact.html and its submission handler in assets/site.js.

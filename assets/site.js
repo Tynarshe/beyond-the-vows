@@ -39,14 +39,46 @@ modal.showModal();document.body.style.overflow='hidden';}));
 document.querySelector('.close-dialog')?.addEventListener('click',()=>modal.close());
 modal?.addEventListener('click',e=>{if(e.target===modal){const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close()}});
 modal?.addEventListener('close',()=>{content.replaceChildren();document.body.style.overflow='';previousFocus?.focus()});
-
-// Typeform calls this only after a successful submission.
-function showEnquiryConfirmation({formId} = {}) {
-  if (formId !== 'bVqyOdQH') return;
-  const confirmation = document.querySelector('#enquiry-confirmation');
-  const embed = document.querySelector('[data-tf-widget="bVqyOdQH"]');
-  if (!confirmation || !embed) return;
-  embed.hidden = true;
-  confirmation.hidden = false;
-  confirmation.focus();
+const date=document.querySelector('#wedding-date');
+if(date){const now=new Date();date.min=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;}
+const form=document.querySelector('#enquiry-form');
+if(form){
+  const button=form.querySelector('[type="submit"]');
+  const status=document.querySelector('#form-status');
+  const confirmation=document.querySelector('#enquiry-success');
+  let sending=false;
+  button.disabled=false;
+  form.addEventListener('submit',async event=>{
+    event.preventDefault();
+    if(sending||!form.reportValidity())return;
+    sending=true;
+    button.disabled=true;
+    button.textContent='Sending your enquiry…';
+    form.setAttribute('aria-busy','true');
+    status.textContent='Sending your enquiry. Please keep this page open until it’s complete.';
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),30000);
+    try{
+      const response=await fetch(form.dataset.endpoint,{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(Object.fromEntries(new FormData(form))),
+        signal:controller.signal
+      });
+      const result=await response.json();
+      if(!response.ok||!(result.success===true||result.success==='true'))throw new Error('Submission not confirmed');
+      form.hidden=true;
+      confirmation.hidden=false;
+      confirmation.focus();
+    }catch(error){
+      status.textContent='We couldn’t confirm your enquiry was sent. Your details are still here. Please try again, or email info@beyondthevows.co.uk if you’re unsure whether it went through.';
+    }finally{
+      clearTimeout(timeout);
+      sending=false;
+      form.removeAttribute('aria-busy');
+      button.disabled=false;
+      setArrowLabel(button,'Send your enquiry');
+    }
+  });
 }
+if(form){const interest=new URLSearchParams(location.search).get('service');const select=document.querySelector('#service');if(interest&&Array.from(select.options).some(option=>option.value===interest))select.value=interest;}

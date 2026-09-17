@@ -40,6 +40,8 @@
 /* Keep the closing headline within even a narrow phone viewport. */
 @media(max-width:700px){.closing h2{font-size:clamp(2.75rem,10vw,4rem)}}
 
-.enquiry-panel{min-width:0}.typeform-embed{width:100%;height:720px;height:clamp(560px,80svh,800px)}
 
-[hidden]{display:none!important}.enquiry-confirmation{padding:32px 24px;border:1px solid var(--line)}.enquiry-confirmation h2{font-size:clamp(2rem,4vw,3rem)}
+
+[hidden]{display:none!important}
+
+.enquiry-success{border:1px solid var(--line);padding:clamp(20px,4vw,40px)}.enquiry-success h2{font-size:clamp(2rem,4vw,3rem)}.enquiry-success .button{margin-bottom:24px}

@@ -47,3 +47,84 @@
 .enquiry-success{border:1px solid var(--line);padding:clamp(20px,4vw,40px)}.enquiry-success h2{font-size:clamp(2rem,4vw,3rem)}.enquiry-success .button{margin-bottom:24px}
 
 .starburst-icon{display:inline-block;width:1em;height:1em;vertical-align:-.12em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}.rating-star-icon{display:inline-block;width:1em;height:1em;vertical-align:-.12em;fill:currentColor}.review-stars>span{display:inline-flex;gap:.2em}
+
+/* Editorial gallery: consistent portraits, individual framing and quiet controls. */
+.gallery{gap:48px 28px}
+.gallery-card{min-width:0;display:flex;flex-direction:column}
+.gallery-image{background:#d9d8ce}
+.gallery-image img{aspect-ratio:2/3;object-position:var(--photo-position,center 50%)}
+.gallery-image[data-instagram="DRDBR7rDGBU"]{--photo-position:center 48%}
+.gallery-image[data-instagram="DdHha7pMp6d"]{--photo-position:center 68%}
+.gallery-image[data-video]{--photo-position:center 45%}
+.gallery-image[data-image="assets/wedding-embrace.jpg"]{--photo-position:center 35%}
+.gallery-image[data-image="assets/celebration-church.jpg"]{--photo-position:center 70%}
+.gallery-image[data-image="assets/traditional-portrait.jpg"]{--photo-position:center 38%}
+.gallery-image:hover img{transform:none}
+.gallery-image:focus-visible{outline-offset:5px}
+.card-caption{align-items:baseline;padding-top:20px;min-height:74px;gap:18px}
+.card-caption h3{font-size:clamp(1.45rem,2.05vw,1.9rem);line-height:1.2;max-width:90%}
+.card-caption>span{font-size:10px;letter-spacing:.12em}
+.gallery-card>.video-link,.gallery-card>.photo-label{align-self:flex-start;margin-top:10px;font-size:11px;letter-spacing:.04em}
+.gallery-card>.photo-label{color:#53594e}
+.image-expand{width:42px;height:42px;display:grid;place-items:center;line-height:1;background:#24282380;border-color:#ffffffb3;right:16px;bottom:16px;backdrop-filter:blur(5px)}
+.image-play{background:#24282380;backdrop-filter:blur(5px)}
+.image-play,.image-expand{transition:background .25s,box-shadow .25s}
+@media(hover:hover) and (pointer:fine){
+ .gallery-image:hover img,.gallery-image:focus-visible img{transform:scale(1.025)}
+ .gallery-image:hover .image-expand,.gallery-image:hover .image-play{background:#242823cf;box-shadow:0 0 0 5px #ffffff20}
+}
+
+/* Warm paper cards give pricing and testimonials a clear visual home. */
+.collections{gap:24px}
+.collection-card{background:#fffdf8;border:1px solid #dcd7cb;padding:36px;box-shadow:0 8px 28px #24282304}
+.collection-card .eyebrow{font-size:10px;letter-spacing:.16em;color:#766247;margin-bottom:24px}
+.collection-title{align-items:center;gap:16px}
+.collection-title h3{font-size:clamp(2rem,3vw,2.7rem)}
+.collection-price{font-family:var(--serif);font-size:2.75rem;line-height:1.1}
+.collection-card ul{border-color:#e1ddd3;margin-top:26px;padding-top:26px}
+.collection-card li{padding-left:23px;line-height:1.6;margin-bottom:15px}
+.collection-card li:before{content:'';width:5px;height:5px;border:1px solid #948068;border-radius:50%;top:.65em}
+.collection-card .button{width:100%;margin-top:auto;padding:16px 18px;gap:14px}
+.collection-card:first-child .button{width:100%;margin-top:28px}
+.collection-card:first-child{background:#eeeee6;column-gap:48px}
+.service-card{border:1px solid #cbd0c2;padding:28px;background:#f6f4ef80}
+.service-card .number{font-size:10px;letter-spacing:.12em;color:#6b715f}
+.service-card h3{font-size:2rem;margin-top:25px}
+.service-card p{margin-bottom:0;font-size:14px;line-height:1.85}
+.review-card{background:#fffdf8;border:1px solid #ded8cb;padding:clamp(26px,4vw,52px);box-shadow:0 10px 35px #24282304}
+.review-stars{font-size:15px;color:#8b7352;margin-bottom:26px}
+.review-stars>span{gap:.3em}
+.review-card blockquote p{font-size:clamp(1.35rem,2vw,1.8rem);line-height:1.65}
+.review-author{margin:28px 0 32px;font-size:13px}
+.review-author span{font-size:11px;letter-spacing:.025em}
+.review-invitation{border-color:#e1ddd3;gap:20px;padding-top:26px}
+.review-invitation .button{background:transparent;color:var(--ink);border-color:#b6b8aa}
+.review-invitation .button:hover{background:#e9ebe5}
+@media(max-width:1000px){
+ .gallery{gap:36px 20px}
+ .card-caption{min-height:77px}
+ .collection-card{padding:28px}
+ .collection-price{font-size:2.3rem}
+ .service-cards{gap:18px}
+ .service-card{padding:22px}
+}
+@media(max-width:700px){
+ .gallery{gap:32px 18px}
+ .card-caption{padding-top:16px;min-height:70px}
+ .card-caption>span{display:block}
+ .card-caption h3{font-size:1.45rem}
+ .image-expand{width:36px;height:36px;right:12px;bottom:12px}
+ .collection-card,.collection-card:first-child{padding:26px;display:flex}
+ .collection-title h3{font-size:2rem}
+ .collection-price{font-size:2.25rem}
+ .collection-card:first-child .button{margin-top:auto}
+ .review-invitation .button{width:100%}
+}
+@media(max-width:480px){
+ .gallery{grid-template-columns:minmax(0,1fr);gap:38px}
+ .gallery-image img{aspect-ratio:2/3}
+ .card-caption{min-height:0}
+ .card-caption h3{font-size:1.8rem}
+ .image-play{width:52px;height:52px}
+ .collection-title{flex-wrap:wrap;gap:12px}
+}

@@ -39,3 +39,14 @@ modal.showModal();document.body.style.overflow='hidden';}));
 document.querySelector('.close-dialog')?.addEventListener('click',()=>modal.close());
 modal?.addEventListener('click',e=>{if(e.target===modal){const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close()}});
 modal?.addEventListener('close',()=>{content.replaceChildren();document.body.style.overflow='';previousFocus?.focus()});
+
+// Typeform calls this only after a successful submission.
+function showEnquiryConfirmation({formId} = {}) {
+  if (formId !== 'bVqyOdQH') return;
+  const confirmation = document.querySelector('#enquiry-confirmation');
+  const embed = document.querySelector('[data-tf-widget="bVqyOdQH"]');
+  if (!confirmation || !embed) return;
+  embed.hidden = true;
+  confirmation.hidden = false;
+  confirmation.focus();
+}

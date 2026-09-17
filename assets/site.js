@@ -24,9 +24,16 @@ const modal=document.querySelector('#media-dialog');
 const content=document.querySelector('#media-content');
 const caption=document.querySelector('#media-caption');
 let previousFocus;
-document.querySelectorAll('[data-image],[data-video]').forEach(button=>button.addEventListener('click',()=>{
+document.querySelectorAll('[data-image],[data-video],[data-instagram]').forEach(button=>button.addEventListener('click',event=>{
+event.preventDefault();
 previousFocus=button;content.replaceChildren();caption.replaceChildren();document.querySelector('#media-title').textContent=button.dataset.title;
-if(button.dataset.video){const frame=document.createElement('iframe');frame.src=`https://www.tiktok.com/player/v1/${button.dataset.video}?autoplay=0&rel=0&description=0`;frame.title=button.dataset.title;frame.className='video-frame';frame.allow='fullscreen';frame.allowFullscreen=true;content.append(frame);caption.append('Playing via TikTok. ');const link=document.createElement('a');link.href=`https://www.tiktok.com/@beyondthevows.co/video/${button.dataset.video}`;setArrowLabel(link, 'Open film on TikTok');link.target='_blank';link.rel='noopener noreferrer';caption.append(link)}
+if(button.dataset.instagram){
+const url=`https://www.instagram.com/reel/${button.dataset.instagram}/`;
+const frame=document.createElement('iframe');
+frame.src=url+'embed/';frame.title=button.dataset.title;frame.className='instagram-frame';frame.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';frame.allowFullscreen=true;content.append(frame);
+caption.textContent='Wedding film · Beyond The Vows';
+}
+else if(button.dataset.video){const frame=document.createElement('iframe');frame.src=`https://www.tiktok.com/player/v1/${button.dataset.video}?autoplay=0&rel=0&description=0`;frame.title=button.dataset.title;frame.className='video-frame';frame.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';frame.allowFullscreen=true;content.append(frame);caption.textContent='Wedding film · Beyond The Vows'}
 else{const img=document.createElement('img');img.src=button.dataset.image;img.alt=button.querySelector('img').alt;img.className='modal-image';content.append(img);caption.textContent='Captured by Beyond The Vows'}
 modal.showModal();document.body.style.overflow='hidden';}));
 document.querySelector('.close-dialog')?.addEventListener('click',()=>modal.close());

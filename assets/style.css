@@ -9,3 +9,30 @@
 
 /* Use the same vector geometry on desktop and mobile, independent of emoji fonts. */
 .arrow-icon{display:inline-block;width:1em;height:1em;vertical-align:-.12em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* Original portrait photography and the Instagram film. */
+.gallery-image img{object-position:center 10%}
+.service-feature img{object-position:center 10%}
+.gallery-cover img{object-fit:contain;background:#d9dacd}
+.instagram-frame{display:block;width:min(100%,440px);height:620px;max-height:67vh;margin:auto;border:0;background:white}
+.reviews{display:grid;grid-template-columns:1fr 1.25fr;gap:8%;align-items:start}
+.reviews-intro>p:not(.eyebrow){max-width:360px}
+.reviews-intro .text-link{margin-top:12px}
+.review-card{border-top:1px solid var(--line);padding-top:25px}
+.review-stars{color:#826337;font-size:20px;letter-spacing:.2em;margin-bottom:22px}
+.review-card blockquote{margin:0}
+.review-card blockquote p{font-family:Georgia,serif;font-size:clamp(1.45rem,2.1vw,2rem);line-height:1.55;color:var(--ink)}
+.review-author{font-size:14px;color:var(--ink);margin:28px 0}
+.review-author span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.review-invitation{border-top:1px solid var(--line);padding-top:25px;display:flex;flex-wrap:wrap;align-items:center;gap:20px}
+.review-invitation p{font-size:13px;margin:0;flex:1;min-width:155px}
+.review-invitation .button{font-size:13px;gap:15px}
+.contact-photo{height:auto;aspect-ratio:3/4;object-position:center 32%}
+@media(max-width:700px){.reviews{grid-template-columns:1fr;gap:35px}.review-invitation{align-items:flex-start;flex-direction:column}.instagram-frame{height:560px}}
+
+/* Film covers open the existing on-page dialog. */
+.film-cover img{object-position:center 50%}
+.image-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:56px;height:56px;border:1px solid #fff;border-radius:50%;background:#24282366;color:white;box-shadow:0 2px 14px #0002;transition:background .2s}
+.image-play svg{width:25px;height:25px;fill:currentColor}
+.film-cover:hover .image-play{background:#242823bb}
+@media(max-width:700px){.image-play{width:42px;height:42px}.image-play svg{width:20px;height:20px}}

@@ -28,23 +28,25 @@ FormSubmit documentation: https://formsubmit.co/
 
 ## Content and media
 
-Public brand bio and imagery were taken from the two social profiles supplied for this website. The original Instagram thumbnails are saved locally, so expiring CDN links are not used by the website. Images remain the property of their respective rights holders. Replace the compressed social thumbnails with original files for best quality before publication.
+The website uses the owner-supplied, full-resolution JPEG photographs provided on 17 September 2026. The original files are copied without resizing or recompression; image dimensions are declared in the pages and gallery photos load lazily. Photo-gallery images use the supplied originals; the restored “One more song” film uses its original social cover. Additional supplied photographs remain available in assets for future use.
 
-- Instagram: https://www.instagram.com/beyondthevows.co/
-- TikTok: https://www.tiktok.com/@beyondthevows.co
-- Linktree (existing enquiry form): https://linktr.ee/beyondthevows.co
+Photo sources:
+- wedding-smiles.jpg: IMG_2193.jpeg
+- wedding-embrace.jpg: IMG_2188.jpeg
+- wedding-portrait.jpg: IMG_2191.jpeg
+- wedding-together.jpg: IMG_2187.jpeg
+- wedding-glance.jpg: IMG_2189.jpeg
+- traditional-couple.jpg: IMG_4487.jpeg
+- traditional-portrait.jpg: IMG_4488.jpeg
+- traditional-bride.jpg: IMG_4489.jpeg
+- traditional-moment.jpg: IMG_4497.jpeg
+- adedayo-deborah-cover.jpg: The Vows.png.jpeg (duplicate supplied once)
 
-Portfolio image sources:
-- couple.jpg: Instagram reel DblmMres69L
-- ceremony.jpg: Instagram reel DboEMxysHEf
-- celebration.jpg: Instagram reel DdHha7pMp6d
-- details.jpg: Instagram reel DdE4Rm6s_l-
-- bride.jpg: Instagram reel DSImw-ajHt1
-- tradition.jpg: Instagram reel DRP3JW9jHAO
-- venue.jpg: Instagram reel Dbh68yPMcJh
-- party.jpg: Instagram reel DdJ_j_yoCJ4
+The homepage gallery has six cards in two desktop rows. “All the joy, unfiltered” uses the owner-supplied cover (codex-clipboard-8b306248-3cd9-413a-85c9-19eef27190ef.jpg) and the Instagram reel https://www.instagram.com/reel/DdHha7pMp6d/. “One more song” is restored to the third card with its original cover and TikTok player (7684363914225732886). “The beginning of forever” uses https://www.instagram.com/reel/DRDBR7rDGBU/ and its public still cover.
 
-Films load official TikTok players only when a visitor opens one, with links to the original post as a fallback. Third-party playback depends on TikTok availability and visitor browser restrictions. The player stops/unloads when the dialog closes. Photos open without contacting the social networks. Google Fonts provides typography, with local system fallbacks.
+Film covers and “Watch the film” buttons open official embeds inside the existing site dialog; no website film button navigates to an external page. Embedded platforms control their own playback and may show sign-in or external watch controls. No videos are downloaded or self-hosted. Closing the dialog unloads its player. Google Fonts provides typography, with local system fallbacks.
+
+The homepage reviews section includes a short excerpt from Sam-Michelle Olaniran (Mishhy)’s five-star Google review, verified on the public business profile on 17 September 2026. This is a manually maintained testimonial, not an automatically refreshed review feed. The section links to the business profile and the owner-supplied review form at https://g.page/r/CcggZTtOlpyZECE/review. No review was submitted.
 
 Services, pricing, coverage limits, Reel counts, delivery times, add-ons, location, and booking terms now follow the owner-supplied Beyond the Vows Wedding Content Guide.pdf (pages 2–6). The Civil Edit includes 2 highlight Reels, while The Prelude includes 1, exactly as shown in the guide. The guide PDF is not included in the public website. Review the privacy wording for your business before launch.
 

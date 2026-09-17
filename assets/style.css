@@ -36,3 +36,6 @@
 .image-play svg{width:25px;height:25px;fill:currentColor}
 .film-cover:hover .image-play{background:#242823bb}
 @media(max-width:700px){.image-play{width:42px;height:42px}.image-play svg{width:20px;height:20px}}
+
+/* Keep the closing headline within even a narrow phone viewport. */
+@media(max-width:700px){.closing h2{font-size:clamp(2.75rem,10vw,4rem)}}

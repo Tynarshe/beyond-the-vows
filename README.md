@@ -16,13 +16,13 @@ Relative paths work both at an account's root and under a project URL. No custom
 
 ## Activate enquiries — required before launch
 
-The native form posts to https://formsubmit.co/info@beyondthevows.co.uk. It retains FormSubmit's spam check and includes a honeypot. FormSubmit emails submissions to **info@beyondthevows.co.uk** after that inbox has been verified.
+The form submits in the background to https://formsubmit.co/ajax/info@beyondthevows.co.uk using FormSubmit’s AJAX endpoint and includes a honeypot. Visitors stay on the Contact page, with an inline confirmation and site navigation. Failed or unconfirmed requests preserve entered details and allow a manual retry; no automatic retries are sent. JavaScript is required, with an email link available without it. FormSubmit emails submissions to **info@beyondthevows.co.uk** after that inbox has been verified.
 
 1. Submit a clearly labelled test enquiry through the website.
 2. Open FormSubmit's activation email in info@beyondthevows.co.uk and confirm the address.
-3. Submit another test and verify delivery to that inbox, the Reply-To address, all enquiry fields, and the return to the thank-you page. Repeat from the published domain if FormSubmit requests activation there.
+3. Submit another test and verify delivery to that inbox, the Reply-To address, all enquiry fields, and the inline confirmation without leaving the Contact page. Repeat from the published domain if FormSubmit requests activation there.
 
-No activation/test email was sent during this build. Browser validation and field configuration were checked locally; inbox delivery requires the steps above. A local preview is not a backend and does not save enquiries. The existing live Typeform linked from the business's Linktree remains available as an alternative on the Contact page: https://form.typeform.com/to/bVqyOdQH. That form's destination inbox was not changed or verified.
+No activation/test email was sent during this build. Browser validation and field configuration were checked locally; inbox delivery requires the steps above. A local preview is not a backend and does not save enquiries. The external Typeform alternative has been removed from the Contact page to keep the enquiry flow on the website.
 
 FormSubmit documentation: https://formsubmit.co/
 
@@ -52,4 +52,4 @@ Services, pricing, coverage limits, Reel counts, delivery times, add-ons, locati
 
 ## Editing
 
-Edit the HTML files for page content, `assets/style.css` for appearance, and `assets/site.js` for gallery/menu behavior. Change the form action in `contact.html` to update the receiving inbox. The `service` URL parameter preselects the enquiry interest, using a fixed list of supported values. No personal enquiry data is saved in browser storage or URLs.
+Edit the HTML files for page content, `assets/style.css` for appearance, and `assets/site.js` for gallery/menu behavior. Change the form `data-endpoint` in `contact.html` to update the receiving inbox. The `service` URL parameter preselects the enquiry interest, using a fixed list of supported values. No personal enquiry data is saved in browser storage or URLs.

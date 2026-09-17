@@ -14,17 +14,11 @@ From this folder, run `python3 -m http.server 4173 --bind 127.0.0.1` and open ht
 
 Relative paths work both at an account's root and under a project URL. No custom domain is configured. The public repository is https://github.com/Tynarshe/beyond-the-vows. GitHub Pages publishes the website at https://tynarshe.github.io/beyond-the-vows/. Updates to `main` are deployed by the included workflow.
 
-## Activate enquiries — required before launch
+## Enquiries
 
-The form submits in the background to https://formsubmit.co/ajax/info@beyondthevows.co.uk using FormSubmit’s AJAX endpoint and includes a honeypot. Visitors stay on the Contact page, with an inline confirmation and site navigation. Failed or unconfirmed requests preserve entered details and allow a manual retry; no automatic retries are sent. JavaScript is required, with an email link available without it. FormSubmit emails submissions to **info@beyondthevows.co.uk** after that inbox has been verified.
+The Contact page embeds the original Beyond The Vows Typeform (`bVqyOdQH`) using Typeform’s official widget SDK. It stays inline on mobile and desktop, and redirects are targeted inside the iframe so the website navigation remains available. The custom FormSubmit form has been removed. Typeform owns the questions, completion screen and response delivery; edit these in the existing Typeform account. No real enquiry was submitted during testing.
 
-1. Submit a clearly labelled test enquiry through the website.
-2. Open FormSubmit's activation email in info@beyondthevows.co.uk and confirm the address.
-3. Submit another test and verify delivery to that inbox, the Reply-To address, all enquiry fields, and the inline confirmation without leaving the Contact page. Repeat from the published domain if FormSubmit requests activation there.
-
-No activation/test email was sent during this build. Browser validation and field configuration were checked locally; inbox delivery requires the steps above. A local preview is not a backend and does not save enquiries. The external Typeform alternative has been removed from the Contact page to keep the enquiry flow on the website.
-
-FormSubmit documentation: https://formsubmit.co/
+The form needs JavaScript and access to Typeform. An email link remains visible if loading fails. Enquiry information is not saved in the website’s browser storage or URLs.
 
 ## Content and media
 
@@ -52,4 +46,4 @@ Services, pricing, coverage limits, Reel counts, delivery times, add-ons, locati
 
 ## Editing
 
-Edit the HTML files for page content, `assets/style.css` for appearance, and `assets/site.js` for gallery/menu behavior. Change the form `data-endpoint` in `contact.html` to update the receiving inbox. The `service` URL parameter preselects the enquiry interest, using a fixed list of supported values. No personal enquiry data is saved in browser storage or URLs.
+Edit the HTML files for page content, `assets/style.css` for appearance, and `assets/site.js` for gallery/menu behavior. Manage the enquiry questions and response settings in the existing Typeform account.

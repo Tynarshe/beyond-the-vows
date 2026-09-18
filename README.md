@@ -36,7 +36,7 @@ Photo sources:
 - traditional-moment.jpg: IMG_4497.jpeg
 - adedayo-deborah-cover.jpg: The Vows.png.jpeg (duplicate supplied once)
 
-The homepage gallery has six cards in two desktop rows. “All the joy, unfiltered” uses the owner-supplied cover (codex-clipboard-8b306248-3cd9-413a-85c9-19eef27190ef.jpg) and the Instagram reel https://www.instagram.com/reel/DdHha7pMp6d/. “One more song” is restored to the third card with its original cover and TikTok player (7684363914225732886). “The beginning of forever” uses https://www.instagram.com/reel/DRDBR7rDGBU/ and its public still cover.
+The homepage gallery has six cards in two desktop rows. “All the joy, unfiltered” uses the owner-supplied cover (codex-clipboard-8b306248-3cd9-413a-85c9-19eef27190ef.jpg) and the Instagram reel https://www.instagram.com/reel/DdHha7pMp6d/. “One more song” uses the owner-supplied cover photo from 18 September 2026 (codex-clipboard-aed01c76-05db-4821-926b-98a48e2bee81.jpg), copied without resizing or recompression as assets/one-more-song-cover.jpg, and TikTok player (7684363914225732886). “The beginning of forever” uses https://www.instagram.com/reel/DRDBR7rDGBU/ and its public still cover.
 
 Film covers and “Watch the film” buttons open official embeds inside the existing site dialog; no website film button navigates to an external page. Embedded platforms control their own playback and may show sign-in or external watch controls. No videos are downloaded or self-hosted. Closing the dialog unloads its player. Google Fonts provides typography, with local system fallbacks.
 
